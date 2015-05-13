@@ -11,7 +11,28 @@ class ApplicationController < Sinatra::Base
 
   # don't enable logging when running tests
   get '/' do
-  	@user = User.all.to_a
-  	"User are #{@user.length}"
+  	haml :index, locals: { users: User.all }
+  end
+
+  get '/new' do
+  	haml :new
+  end
+
+  get '/hello/:name' do
+  	"Hello User #{params[:name]}"
+  end
+
+  post '/register' do
+  	User.create(username: params[:username], password: params[:password])
+  	redirect "/hello/#{params[:username]}"
+  end
+
+  post '/sessions' do
+  	user = User.where(username: params[:username], password: params[:password]).first
+  	if user.nil?
+  		haml :index, locals: {message: 'wrong username password'}
+  	else
+  		redirect "/hello/#{params[:username]}"
+  	end
   end
 end
