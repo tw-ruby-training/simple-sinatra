@@ -1,0 +1,56 @@
+body {
+  position: relative;
+  width: 100%;
+}
+header {
+  text-align: center;
+  background: rgb(171, 151, 118);
+  font-size: 20px;
+  line-height: 50px;
+  color: #383838;
+  height: 50px;
+  width: 100%;
+}
+form {
+  display: none;
+  width: 960px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+form.active {
+  display: block;
+}
+
+.error {
+  display: block;
+  color: red;
+  margin-bottom: 10px;
+}
+
+.success {
+  display: block;
+  color: darkgreen;
+  margin-bottom: 10px;
+}
+
+article {
+  text-align: center;
+  width: 1190px;
+  margin: 0 auto;
+  font-size: 40px;
+  margin-top: 130px;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  color: white;
+  background: #383838;
+  text-align: center;
+}
+
+

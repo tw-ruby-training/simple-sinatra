@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>LiveText</title>
+    <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet'/>
+    <link href='/styles/main.css' rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+
+  </head>
+
+  <body>
+    <ul class="buttons">
+      <li class="sign-up-button"><a href="javascript:void(0);">Sign In</a></li>
+      <li class="sign-in-button"><a href="javascript:void(0);">Sign Up</a></li>
+    </ul>
+
+    <form action='login' method='post' class="active sign-up" >
+      <span class="success"><%= @success %></span>
+      <ul class='unstyled'>
+        <li><label for="username">User:</label><input type="text" name="username"/></li>
+        <li><label for="password">Password:</label><input type="password" name="password"/></li>
+      </ul>
+      <span class="error"><%= @error %></span>
+      <button type='submit' class='btn btn-primary'>Login</button>
+    </form>
+
+    <form action="register" method='post' class="sign-in">
+      <p>Input your information below:</p>
+      <ul class='unstyled'>
+        <li><label for="username">User:</label><input type="text" name="username"/></li>
+        <li><label for="password">Password:</label><input type="password" name="password"/></li>
+      </ul>
+      <button type='submit' class='btn btn-primary'>Submit</button>
+    </form>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
+  </body>
+
+</html>
