@@ -1,0 +1,13 @@
+development:
+  adapter: sqlite3
+  database: user_auth.sqlite3
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  database: d3fgjqcs2vveqt
+  pool: 5
+  timeout: 5000
+  username: sawcabxysysnyn
+  password: RhMwfDjCVTxistgjL2uoQqY7aZ
