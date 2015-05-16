@@ -1,0 +1,15 @@
+!!! XML
+!!!
+%html
+  %head
+    %title Myspace
+  %body
+    %h2="Register"
+    %form{:method => "post", :action => "create"}
+      Username:
+      %input{:name => "username", :type => "text"}
+      %br
+      Password:
+      %input{:name => "password", :type => "password"}
+      %br
+      %input{:type => "submit", :value => "Submit"}
