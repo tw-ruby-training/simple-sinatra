@@ -1,9 +1,7 @@
-source 'https://rubygems.org'
+# A sample Gemfile
+source "https://rubygems.org"
 
-gem 'sinatra'
-gem "sinatra-activerecord"
-gem 'activerecord', "3.2.17"
-# gem "mysql2"
-gem 'pg'
-gem "rake"
+# gem "rails"
+gem 'bcrypt'
 gem 'haml'
+gem 'sinatra'
