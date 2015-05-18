@@ -18,7 +18,9 @@ class AdvancedRubyTraining < Sinatra::Base
   end
 
   post '/login' do
-    "Hello World #{params['name']}"
+    user = User.find_by name: params['name'], password: params['password']
+    redirect to("/home/#{user.id}") if user
+    erb :index
   end
 
   get '/register' do
