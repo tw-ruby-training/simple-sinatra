@@ -5,7 +5,7 @@ require './app/models/user'
 class AdvancedRubyTraining < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
-  set :views, Proc.new { File.join(root, "app/views") }
+  set :views, Proc.new { File.join(root, "./views") }
   set :database, {adapter: "sqlite3", database: "art.sqlite3"}
 
   get '/home/:id' do
