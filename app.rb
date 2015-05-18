@@ -1,8 +1,12 @@
 require 'sinatra/base'
 
-class Application < Sinatra::Base
-  get '/' do
-    'hello world'
+class UserController < Sinatra::Base
+  get '/users' do
+    haml :index
+  end
+
+  post '/users' do
+    haml :login
   end
 
   run! if app_file == $0
