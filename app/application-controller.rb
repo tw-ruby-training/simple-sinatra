@@ -6,4 +6,7 @@ class ApplicationController < Sinatra::Base
 
   set :views, Proc.new { File.join(root, "./views") }
   set :database, {adapter: "sqlite3", database: "art.sqlite3"}
+
+  enable :sessions
+  set :session_secret, 'super secret'
 end

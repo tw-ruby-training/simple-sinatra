@@ -8,6 +8,7 @@ class LoginController < ApplicationController
 
   post '/login' do
     user = User.find_by name: params['name'], password: params['password']
+    session[:user_name] = user.name
     redirect to("/user/#{user.id}") if user
     erb :login
   end
