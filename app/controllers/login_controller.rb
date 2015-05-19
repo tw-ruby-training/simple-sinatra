@@ -1,6 +1,10 @@
 require 'sinatra/base'
+require_relative '../../lib/database_helper'
 
 class LoginController < Sinatra::Base
+  set :views, __dir__+'/../views/'
+  set :database, DatabaseHelper.database_uri
+
   get '/' do
     redirect '/login'
   end
@@ -13,5 +17,4 @@ class LoginController < Sinatra::Base
     haml :login
   end
 
-  run! if app_file == $0
 end

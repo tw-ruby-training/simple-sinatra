@@ -1,0 +1,5 @@
+database: simple-sinatra
+host: 127.0.0.1
+username: root
+password: rootpass
+port: 3306
