@@ -1,11 +1,15 @@
 require 'sinatra/base'
 
-class UserController < Sinatra::Base
-  get '/users' do
+class LoginController < Sinatra::Base
+  get '/' do
+    redirect '/login'
+  end
+
+  get '/login' do
     haml :index
   end
 
-  post '/users' do
+  post '/login' do
     haml :login
   end
 
