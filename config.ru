@@ -1,3 +1,5 @@
-require './app/advanced-ruby-training'
+require './app/controllers/login-controller'
+require './app/controllers/user-controller'
 
-run AdvancedRubyTraining.new
+map('/')      { run LoginController }
+map('/user')  { run UserController }
