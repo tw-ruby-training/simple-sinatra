@@ -10,16 +10,29 @@ class LoginController < Sinatra::Base
   set :views, __dir__+'/../views/'
 
   get '/' do
-    redirect '/login'
+    redirect '/signup'
   end
 
-  get '/login' do
+  get '/signup' do
     haml :index
   end
 
-  post '/login' do
+  post '/signup' do
     User.create({:email => params[:email], :password => params[:password]})
+    haml :welcome
+  end
+
+  get '/login' do
     haml :login
+  end
+
+  post '/login' do
+    user = User.find({:email => params[:email]})
+    if(user.nil?)
+      redirect '/signup'
+    end
+
+    haml :welcome
   end
 
 end

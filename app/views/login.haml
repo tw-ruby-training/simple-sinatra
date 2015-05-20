@@ -1,1 +1,10 @@
-Congratulations!
+!!! 5
+%head
+  Welcome to login in our system!
+%body
+  %form{ id: 'login', method: 'post' }
+    %label{for: 'email'} Email:
+    %input{name: 'email', type: 'text', value: ''}
+    %label{for: 'password'} Password:
+    %input{name: 'password', type: 'password', value: ''}
+    %input{type: 'submit' }

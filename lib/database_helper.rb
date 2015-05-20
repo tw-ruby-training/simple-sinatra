@@ -8,7 +8,7 @@ class DatabaseHelper
       "mysql://#{conf['username']}:#{conf['password']}@#{conf['host']}:#{conf['port'] || 3306}/#{conf['database']}"
     end
 
-    def database
+    def connect
       Sequel.connect(database_uri)
     end
 

@@ -1,7 +1,7 @@
 require 'sequel'
 require 'digest/md5'
 
-DatabaseHelper.database
+DatabaseHelper.connect
 
 class User < Sequel::Model
   extend Sequel::Model::ClassMethods

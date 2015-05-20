@@ -13,7 +13,7 @@ end
 desc 'Perform migration up to latest migration available'
 task :migrate do
   Sequel.extension :migration
-  Sequel::TimestampMigrator.run(DatabaseHelper.database, 'migrations')
+  Sequel::TimestampMigrator.run(DatabaseHelper.connect, 'migrations')
   puts 'Task complete'
 end
 
