@@ -1,9 +1,13 @@
+require 'sinatra'
+require 'sinatra/sequel'
 require 'sinatra/base'
+
 require_relative '../../lib/database_helper'
+require_relative '../models/user'
+
 
 class LoginController < Sinatra::Base
   set :views, __dir__+'/../views/'
-  set :database, DatabaseHelper.database_uri
 
   get '/' do
     redirect '/login'
@@ -14,7 +18,9 @@ class LoginController < Sinatra::Base
   end
 
   post '/login' do
+    User.create({:email => params[:email], :password => params[:password]})
     haml :login
   end
 
 end
+
